@@ -19,17 +19,11 @@ class TabsTest {
 
     @Test
     fun testTabSwitching() {
-        // Ждём загрузки приложения
-        Thread.sleep(2000)
-
         // Проверяем, что изначально активна первая вкладка
         onView(withText("Page: 1")).check(matches(isDisplayed()))
 
         // Кликаем на вторую вкладку
         onView(withText("TAB 2")).perform(click())
-
-        // Ждём переключения
-        Thread.sleep(1000)
 
         // Проверяем, что отображается вторая страница
         onView(withText("Page: 2")).check(matches(isDisplayed()))
